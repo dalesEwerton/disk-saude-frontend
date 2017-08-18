@@ -12,6 +12,20 @@ app.controller("registerComplaintCtrl", function ($scope, $http, toastr, $locati
     }
 });
 
+app.controller("registerAnimalComplaintCtrl", function ($scope, $http, toastr, $location) {
+
+    $scope.registerComplaint = function (complaint) {
+        $http.post("http://localhost:5000/SpringBootRestApi/api/queixa/animal/", JSON.stringify(complaint))
+            .then(function success(response) {
+                toastr.success("Queixa adicionada com sucesso!");
+                $location.path('/createdcomplaint/' + response.data.id);
+            }, function error(error) {
+                console.log(error);
+                console.log("Problemas ao tentar adicionar queixa.");
+            });
+    }
+});
+
 app.controller("searchAverangeCtrl", function ($scope, $http) {
 
     $scope.average = null;
@@ -30,6 +44,7 @@ app.controller("searchComplaintCtrl", function ($scope, $http) {
 
     $scope.searchComplaint = function (id) {
         $http.get("http://localhost:5000/SpringBootRestApi/api/queixa/" + id).then(function successCallback(response) {
+            console.log(JSON.stringify(response.data));
             $scope.complaint = response.data;
         }, function errorCallback(error) {
             $scope.complaint = null;
