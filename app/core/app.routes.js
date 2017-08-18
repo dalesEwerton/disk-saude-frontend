@@ -1,7 +1,13 @@
 app.config(function ($routeProvider) {
     $routeProvider.when("/",{
         templateUrl: "view/search.html"
-    }).when("/complaint/register", {
+    }).when("/login", {
+        templateUrl:"view/admLogin.html",
+        controller: "admLoginCtrl"
+    }).when("/loginSucess", {
+        templateUrl:"view/areaRestrita.html"
+    })
+        .when("/complaint/register", {
         templateUrl: "view/registerComplaint.html",
         controller : "registerComplaintCtrl",
     }).when("/complaint/registerAnimal", {

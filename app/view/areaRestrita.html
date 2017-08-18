@@ -1,0 +1,89 @@
+<div class="container center-block">
+    <div>
+        <form name="addEspecialidadeForm">
+            <legend>Adicionar Nova Especialidade</legend>
+            <div>
+                <label for="inputEspecialidade" class="col-sm-2 col-form-label">Descrição:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="descricao" id="inputEspecialidade" ng-model="especialidadeNova.descricao"><br>
+                    <button class="btn btn-primary btn-block" ng-click="">Adicionar Especialidade</button><br><br>
+                </div>
+
+            </div>
+
+        </form>
+
+        <form name="addUnidadeSaudeForm">
+            <legend>Adicionar Nova Unidade de Saúde</legend>
+            <div>
+                <label for="inputUnidade" class="col-sm-2 col-form-label">Descrição:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="descricao" id="inputUnidade" ng-model="unidadeNova.descricao"><br>
+                </div>
+
+            </div>
+            <div>
+                <label for="inputBairro" class="col-sm-2 col-form-label">Bairo:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="bairro" id="inputBairro" ng-model="unidadeNova.bairro"><br>
+                    <button class="btn btn-primary btn-block" ng-click="">Adicionar Unidade de Saúde</button><br><br>
+                </div>
+
+            </div>
+
+        </form>
+
+        <form name="addEspecialidadeEmUnidadeForm">
+            <legend>Adicionar Especialidade em uma Unidade de Saúde</legend>
+            <div>
+                <label for="inputUnidade" class="col-sm-2 col-form-label">Id da Unidade de Saúde:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="id" id="inputUnidadeId" ng-model="unidade.id"><br>
+                </div>
+
+            </div>
+            <div>
+                <label for="inputEspecialidadeId" class="col-sm-2 col-form-label">Codigo da Especialidade:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="id" id="inputEspecialidadeId" ng-model="especialidade.codigo"><br>
+                    <button class="btn btn-primary btn-block" ng-click="">Adicionar Especialidade na Unidade de Saúde</button><br><br>
+                </div>
+
+            </div>
+
+        </form>
+
+        <form name="modificarQueixaForm">
+            <legend>Modificar Status de Queixa</legend>
+            <div>
+                <label for="inputQueixaId" class="col-sm-2 col-form-label">Id da Queixa:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="id" id="inputQueixaId" ng-model="queixa.id"><br>
+                </div>
+
+            </div>
+            <div>
+                <label for="inputStatusQueixa" class="col-sm-2 col-form-label">Novo status da queixa:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="status" id="inputStatusQueixa" ng-model="queixa.status"
+                           placeholder="1(Aberta), 2(Em andamento) ou 3(Fechada)"><br>
+                </div>
+
+            </div>
+            <div>
+                <label for="inputComentarioQueixa" class="col-sm-2 col-form-label">Comentário:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="comentario" id="inputComentarioQueixa" ng-model="queixa.comentario"><br>
+                    <button class="btn btn-primary btn-block" ng-click="">Modificar Status da Queixa</button><br><br>
+                </div>
+            </div>
+
+            <div>
+                <legend>Gerar Relatório de Queixas</legend><br><br>
+                <button class="btn btn-danger btn-blck" ng-click="" >Gerar Relatório de Queixas</button><br><br>
+            </div>
+
+        </form>
+    </div>
+
+</div>

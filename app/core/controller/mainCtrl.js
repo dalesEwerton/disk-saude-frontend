@@ -1,3 +1,19 @@
+app.controller("admLoginCtrl", function ($scope) {
+    
+    $scope.login  = function (adm) {
+
+        user = "admin"
+        password = "admin"
+
+        if(adm.user == "admin") {
+            if(adm.password == "admin") {
+                alert("Login Realizado com Sucesso!")
+                window.location.href = "#!/loginSucess"
+            }
+        }
+    }
+})
+
 app.controller("registerComplaintCtrl", function ($scope, $http, toastr, $location) {
 
     $scope.registerComplaint = function (complaint) {
