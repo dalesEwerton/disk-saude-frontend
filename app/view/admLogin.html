@@ -1,21 +1,19 @@
 <div class="container center-block">
     <div>
-        <form name="loginForm">
-            <div class="col-md-5 col-md-offset-3">
-                <fieldset>
-                    <legend>ÁREA RESTRITA</legend><br>
-                    <label for="inputUser" class="col-sm-2 col-form-label">Usuario:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="user" id="inputUser" ng-model="adm.user"><br>
-                    </div>
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Senha:</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" name="user" id="inputPassword" ng-model="adm.password"><br>
-                    </div>
-                </fieldset>
+        <div class="col-md-5 col-md-offset-3">
+            <fieldset>
+                <legend>ÁREA RESTRITA</legend><br>
+                <label for="inputUser" class="col-sm-2 col-form-label">Usuario:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="user" id="inputUser" ng-model="adm.user"><br>
+                </div>
+                <label for="inputPassword" class="col-sm-2 col-form-label">Senha:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="user" id="inputPassword" ng-model="adm.password"><br>
+                </div>
+            </fieldset>
 
-                <button class="btn btn-primary btn-block" ng-click="login(adm)">Login</button>
-            </div>
-        </form>
+            <button class="btn btn-primary btn-block" ng-click="login(adm)">Login</button>
+        </div>
     </div>
 </div>

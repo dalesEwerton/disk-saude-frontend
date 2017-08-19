@@ -5,9 +5,9 @@ app.config(function ($routeProvider) {
         templateUrl:"view/admLogin.html",
         controller: "admLoginCtrl"
     }).when("/loginSucess", {
-        templateUrl:"view/areaRestrita.html"
-    })
-        .when("/complaint/register", {
+        templateUrl:"view/areaRestrita.html",
+        controller: "areaRestritaCtrl"
+    }).when("/complaint/register", {
         templateUrl: "view/registerComplaint.html",
         controller : "registerComplaintCtrl",
     }).when("/complaint/registerAnimal", {
