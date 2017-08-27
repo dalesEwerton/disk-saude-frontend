@@ -1,3 +1,59 @@
+app.controller("reportComplaintCtrl", function ($scope, $http) {
+
+    var coomplatinsList
+
+    $http.get("http://localhost:5000/SpringBootRestApi/api/queixa/")
+        .then(function success(response) {
+            complaintList = response.data
+            console.log(response)
+        }, function error(error) {
+            console.log(error);
+            console.log("Problemas ao tentar adicionar especialidade.");
+            alert("Erro ao tentar criar especialidade")
+        })
+
+    $scope.complaints = function () {
+        return complaintList;
+    }
+
+    $scope.situation = "";
+    
+
+    var getGeneralSituationComplaints = function (neighborhood) {
+        $http.get("http://localhost:5000/SpringBootRestApi/api/geral/situacao")
+            .then(function success(response) {
+                console.log(response.data.obj);
+
+                if(response.data.obj == 0){
+                    $scope.situation = {
+                        status: "RUIM",
+                        color: "label-danger"
+                    };
+
+                } else if(response.data.obj == 1){
+
+                    $scope.situation = {
+                        status: "REGULAR",
+                        color: "label-primary"
+                    };
+                } else {
+                    $scope.situation = "";
+                    $scope.situation = {
+                        status: "BOM",
+                        color: "label-success"
+                    };
+
+                }
+            }, function failed(error) {
+                console.log("Erro na busca de unidades");
+                console.log(error.data.errorMessage);
+            });
+    }
+
+    getGeneralSituationComplaints();
+
+})
+
 app.controller("areaRestritaCtrl", function ($scope, $http, toastr) {
 
     $scope.addNovaEspecialidade = function (especialidadeNova) {
